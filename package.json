@@ -1,18 +1,18 @@
 {
-   "name": "js-tdd",
-   "version": "1.0.0",
-   "description": "",
-   "main": "getCardProvider.js",
-   "dependencies": {
-      "nvm": "^0.0.4"
-   },
-   "devDependencies": {
-      "jest": "26.0.1"
-   },
-   "scripts": {
-      "test": "jest",
-      "test:watch": "jest --watch"
-   },
-   "author": "",
-   "license": "ISC"
+  "name": "js-tdd",
+  "version": "1.0.0",
+  "main": "getCardProvider.js",
+  "dependencies": {
+    "nvm": "^0.0.4"
+  },
+  "devDependencies": {
+    "jest": "26.0.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
