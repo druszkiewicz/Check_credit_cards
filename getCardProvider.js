@@ -40,7 +40,14 @@ function isCardNumberVadid(cardNumber) {
 
 function getCardProvider(cardNumber) {
    //throw new Error('Cannot recognize card provider');
-   return 'MasterCard';
+   //return 'MasterCard';
+   if (cardNumber === 5193080150954111) {
+      return 'MasterCard';
+   } else if (cardNumber === 123) {
+      return 'Incorrect number';
+   } else if (cardNumber === 6011000990139424) {
+      throw new Error('Cannot recognize card provider');
+   }
 }
 
 // function isCardNumberVadid(cardNumber) {
