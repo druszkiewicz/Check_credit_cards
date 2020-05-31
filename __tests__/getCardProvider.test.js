@@ -9,6 +9,24 @@ test('should recognize MasterCard', () => {
    expect(result).toBe('MasterCard');
 });
 
+test('should recognize American Express', () => {
+   //given
+   const cardNumber = 371449635398431;
+   //when
+   const result = getCardProvider(cardNumber);
+   //then
+   expect(result).toBe('American Express');
+});
+
+test('should recognize Visa', () => {
+   //given
+   const cardNumber = 4222222222222;
+   //when
+   const result = getCardProvider(cardNumber);
+   //then
+   expect(result).toBe('Visa');
+});
+
 test('should mark number as incorrect', () => {
    //given
    const cardNumber = 123;
