@@ -34,11 +34,18 @@ function isCardNumberVadid(cardNumber) {
 }
 
 function getProvider(cardNumber) {
-   if (isIncluded(cardNumber, 2, ['51', '52', '53', '54', '55'])) {
+   const cardNumberStr = cardNumber.toString();
+   if (
+      cardNumberStr.length === 16 &&
+      isIncluded(cardNumberStr, 2, ['51', '52', '53', '54', '55'])
+   ) {
       return messages[1];
-   } else if (isIncluded(cardNumber, 2, ['34', '37'])) {
+   } else if (cardNumberStr.length === 15 && isIncluded(cardNumberStr, 2, ['34', '37'])) {
       return messages[2];
-   } else if (isIncluded(cardNumber, 1, ['4'])) {
+   } else if (
+      (cardNumberStr.length === 13 || cardNumberStr.length === 16) &&
+      isIncluded(cardNumberStr, 1, ['4'])
+   ) {
       return messages[3];
    } else if (cardNumber === 123) {
       return messages[10];
@@ -47,7 +54,15 @@ function getProvider(cardNumber) {
    }
 }
 
-function isIncluded(value, numberOfChar, array) {
-   const toCheck = value.toString().substring(0, numberOfChar);
+function isIncluded(valueStr, numberOfChar, array) {
+   const toCheck = valueStr.substring(0, numberOfChar);
    return array.includes(toCheck);
 }
+
+/***** */
+// const inputValue = document.querySelector('.inputValue-JS').value;
+// const result = document.querySelector('.showResult-JS');
+// console.log(inputValue);
+// const checkButton = document.querySelector('.checkButton-JS').addEventListener('click', () => {
+//    result.innerHTML = getCardProvider(inputValue);
+// });
