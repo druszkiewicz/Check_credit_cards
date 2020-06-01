@@ -10,7 +10,7 @@ module.exports.getCardProvider = (cardNumber) => {
    if (isCardNumberVadid(cardNumber)) {
       return getProvider(cardNumber);
    } else {
-      return 'Incorrect number';
+      return messages[10];
    }
 };
 
@@ -47,10 +47,9 @@ function getProvider(cardNumber) {
       isIncluded(cardNumberStr, 1, ['4'])
    ) {
       return messages[3];
-   } else if (cardNumber === 123) {
-      return messages[10];
    } else {
-      throw new Error(messages[11]);
+      //throw new Error(messages[11]);
+      return messages[11];
    }
 }
 
@@ -58,11 +57,3 @@ function isIncluded(valueStr, numberOfChar, array) {
    const toCheck = valueStr.substring(0, numberOfChar);
    return array.includes(toCheck);
 }
-
-/***** */
-// const inputValue = document.querySelector('.inputValue-JS').value;
-// const result = document.querySelector('.showResult-JS');
-// console.log(inputValue);
-// const checkButton = document.querySelector('.checkButton-JS').addEventListener('click', () => {
-//    result.innerHTML = getCardProvider(inputValue);
-// });

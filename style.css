@@ -1,0 +1,23 @@
+body {
+   margin: 20px auto;
+   font-family: 'Lato';
+   font-weight: 300;
+   font-size: 1.25rem;
+
+}
+
+.app {
+   background: tomato;
+   border-style: solid;
+   border-radius: 20px;
+   max-width: 30%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.result {
+   color: white;
+   font-size: 30px;
+   font-weight: 600;
+}

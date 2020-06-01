@@ -36,6 +36,15 @@ test('should mark number as incorrect', () => {
    expect(result).toBe('Incorrect number');
 });
 
+test('card provider not recognized', () => {
+   //given
+   const cardNumber = 6011000990139424;
+   //when
+   const result = getCardProvider(cardNumber);
+   //then
+   expect(result).toBe('Cannot recognize card provider');
+});
+
 // test('should return true', () => {
 //    //given
 //    const cardNumber = 4222222222222;
@@ -45,11 +54,11 @@ test('should mark number as incorrect', () => {
 //    expect(result).toBe(true);
 // });
 
-test('should throw if provider cannot be recognized', () => {
-   //given
-   const cardNumber = 6011000990139424;
-   //then
-   expect(() => {
-      getCardProvider(cardNumber);
-   }).toThrow('Cannot recognize card provider');
-});
+// test('should throw if provider cannot be recognized', () => {
+//    //given
+//    const cardNumber = 6011000990139424;
+//    //then
+//    expect(() => {
+//       getCardProvider(cardNumber);
+//    }).toThrow('Cannot recognize card provider');
+// });
