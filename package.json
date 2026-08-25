@@ -6,7 +6,7 @@
     "nvm": "^0.0.4"
   },
   "devDependencies": {
-    "jest": "26.0.1"
+    "jest": "30.4.2"
   },
   "scripts": {
     "test": "jest",
